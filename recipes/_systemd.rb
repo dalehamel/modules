@@ -18,7 +18,7 @@ end
 file '/etc/modules-load.d/modules.conf' do
   action :delete
   backup false
-  only_if { platform?('debian') }
+  only_if { platform?('debian') || platform?('ubuntu') }
 end
 
 service 'module-init-tools' do

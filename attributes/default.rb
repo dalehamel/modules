@@ -10,6 +10,10 @@ default['modules']['init'] = value_for_platform(
   'debian' => {
     '~> 8.0' => 'systemd'
   },
+  'ubuntu' => {
+    '< 15.04' => 'upstart',
+    '>= 15.04' => 'systemd'
+  },
   'default' => 'upstart')
 default['modules']['packages'] = value_for_platform(
   'debian' => {
